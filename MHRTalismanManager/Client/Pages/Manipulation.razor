@@ -1,0 +1,129 @@
+﻿@page "/import"
+@using MHRTalismanManager.Shared
+@using System.Text.Json
+@using System.ComponentModel.DataAnnotations
+@inject HttpClient Http
+@inject ILocalStorageService localStorage
+
+<h3>Import Talismans from images</h3>
+
+
+@if (_isImporting)
+{
+    <p>Processing file @_currentFile of @MaxFiles</p>
+
+    <br/>
+    <br/>
+}
+
+<EditForm Model="@_model" OnSubmit="@ImportFiles">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+
+    <InputFile multiple OnChange="@InputFilesChanged"></InputFile>
+    <br/><br/>
+    <InputCheckbox @bind-Value="_model.OverwriteExistingCollection">Overwrite existing collection</InputCheckbox>
+    <br/><br/>
+    <button type="submit">Import</button>
+</EditForm>
+
+@if (_importResult.Count > 0)
+{
+    <br/>
+    <br/>
+    <h3>Import Result</h3>
+    <br/>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Skill 1</th>
+            <th>Points</th>
+            <th>Skill 2</th>
+            <th>Points</th>
+            <th>Slot 1</th>
+            <th>Slot 2</th>
+            <th>Slot 3</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var talisman in _importResult)
+        {
+            <tr>
+                <td>@talisman.Skill1.Name</td>
+                <td>@talisman.Skill1.Points</td>
+                <td>@(talisman.Skill2?.Name ?? "-")</td>
+                <td>@(talisman.Skill2?.Points.ToString() ?? "-")</td>
+                <td>@talisman.Slot1.GetDisplayName()</td>
+                <td>@talisman.Slot2.GetDisplayName()</td>
+                <td>@talisman.Slot3.GetDisplayName()</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private bool _isImporting;
+    private readonly ImportModel _model = new();
+    private int _currentFile;
+
+    private int MaxFiles => _model.Files.Count;
+
+    private readonly List<Talisman> _importResult = new();
+
+    private async void ImportFiles()
+    {
+        _importResult.Clear();
+        _isImporting = true;
+
+        try
+        {
+            if (_model.OverwriteExistingCollection)
+            {
+                await localStorage.RemoveItemAsync("talismans");
+            }
+
+            for (var i = 0; i < _model.Files.Count; i++)
+            {
+                var file = _model.Files[i];
+                _currentFile = i + 1;
+                StateHasChanged();
+
+                var talisman = await ProcessFile(file);
+                _importResult.Add(talisman);
+                Console.WriteLine(JsonSerializer.Serialize(talisman));
+                StateHasChanged();
+            }
+        }
+        finally
+        {
+            _isImporting = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task<Talisman> ProcessFile(IBrowserFile file)
+    {
+        var response = await Http.PostAsync("/ocr", new StreamContent(file.OpenReadStream()));
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Talisman>();
+    }
+
+    private void InputFilesChanged(InputFileChangeEventArgs e)
+    {
+        _model.Files = e.GetMultipleFiles(int.MaxValue);
+    }
+
+    public class ImportModel
+    {
+        [Required]
+        public IReadOnlyList<IBrowserFile> Files { get; set; }
+
+        [Required]
+        public bool OverwriteExistingCollection { get; set; }
+    }
+
+}
