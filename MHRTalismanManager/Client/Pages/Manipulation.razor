@@ -1,28 +1,42 @@
 ﻿@page "/import"
+@using MoreLinq
 @using MHRTalismanManager.Shared
 @using System.Text.Json
+@using System.Text
 @using System.ComponentModel.DataAnnotations
 @inject HttpClient Http
 @inject ILocalStorageService localStorage
 
-<h3>Import Talismans from images</h3>
+<EditForm Model="@_fileImportModel" OnSubmit="@ImportFiles">
+    <h3>Import Talismans from images</h3>
 
+    @if (_isImporting)
+    {
+        <p>Processing file @_currentFile of @MaxFiles</p>
 
-@if (_isImporting)
-{
-    <p>Processing file @_currentFile of @MaxFiles</p>
-
-    <br/>
-    <br/>
-}
-
-<EditForm Model="@_model" OnSubmit="@ImportFiles">
+        <br/>
+        <br/>
+    }
     <DataAnnotationsValidator/>
     <ValidationSummary/>
 
     <InputFile multiple OnChange="@InputFilesChanged"></InputFile>
     <br/><br/>
-    <InputCheckbox @bind-Value="_model.OverwriteExistingCollection">Overwrite existing collection</InputCheckbox>
+    <InputCheckbox id="overwriteExisting" @bind-Value="_fileImportModel.OverwriteExistingCollection"></InputCheckbox>
+    <label for="overwriteExisting">Overwrite existing collection</label>
+    <br/><br/>
+    <button type="submit">Import</button>
+</EditForm>
+
+<br/><br/>
+
+<EditForm Model="@_wikiDbModel" OnSubmit="@DeserializeWikiDb">
+    <h3>Import from https://mhrise.wiki-db.com/sim/?hl=en</h3>
+
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+
+    <InputTextArea @bind-Value="_wikiDbModel.Data"></InputTextArea>
     <br/><br/>
     <button type="submit">Import</button>
 </EditForm>
@@ -65,10 +79,11 @@
 
 @code {
     private bool _isImporting;
-    private readonly ImportModel _model = new();
+    private readonly FileImportModel _fileImportModel = new();
+    private readonly WikiDbModel _wikiDbModel = new();
     private int _currentFile;
 
-    private int MaxFiles => _model.Files.Count;
+    private int MaxFiles => _fileImportModel.Files.Count;
 
     private readonly List<Talisman> _importResult = new();
 
@@ -79,14 +94,14 @@
 
         try
         {
-            if (_model.OverwriteExistingCollection)
+            if (_fileImportModel.OverwriteExistingCollection)
             {
                 await localStorage.RemoveItemAsync("talismans");
             }
 
-            for (var i = 0; i < _model.Files.Count; i++)
+            for (var i = 0; i < _fileImportModel.Files.Count; i++)
             {
-                var file = _model.Files[i];
+                var file = _fileImportModel.Files[i];
                 _currentFile = i + 1;
                 StateHasChanged();
 
@@ -95,6 +110,8 @@
                 Console.WriteLine(JsonSerializer.Serialize(talisman));
                 StateHasChanged();
             }
+
+            await localStorage.SetItemAsync("talismans", JsonSerializer.Serialize(_importResult));
         }
         finally
         {
@@ -114,10 +131,110 @@
 
     private void InputFilesChanged(InputFileChangeEventArgs e)
     {
-        _model.Files = e.GetMultipleFiles(int.MaxValue);
+        _fileImportModel.Files = e.GetMultipleFiles(int.MaxValue);
     }
 
-    public class ImportModel
+    private async void DeserializeWikiDb()
+    {
+        _importResult.Clear();
+
+        var data = new Queue<byte>(Convert.FromBase64String(_wikiDbModel.Data));
+
+        var talismans = SplitIntoTalismanData(data)
+            .Select(DeserializeTalismanData)
+            .ToList();
+
+        _importResult.AddRange(talismans);
+        Console.WriteLine(JsonSerializer.Serialize(_importResult));
+        StateHasChanged();
+    }
+
+    private Talisman DeserializeTalismanData(Queue<byte> data)
+    {
+        var result = new Talisman();
+
+        var (text1, points1) = DeserializeSkill(data);
+        result.Skill1 = new TalismanSkill { Name = text1, Points = points1 };
+
+
+        if (data.Peek() != SlotDataSignal)
+        {
+            var (text2, points2) = DeserializeSkill(data);
+            result.Skill2 = new TalismanSkill { Name = text2, Points = points2 };
+        }
+
+        var (slot1, slot2, slot3) = DeserializeSlots(data);
+
+        result.Slot1 = slot1;
+        result.Slot2 = slot2;
+        result.Slot3 = slot3;
+
+        return result;
+    }
+
+    private (SlotType slot1, SlotType slot2, SlotType slot3) DeserializeSlots(Queue<byte> data)
+    {
+        if (data.Dequeue() != SlotDataSignal)
+            throw new Exception("error in data");
+
+        var slotDataLength = data.Dequeue();
+
+        var slots = Enumerable.Repeat(0, slotDataLength)
+                              .Select(_ => data.Dequeue())
+                              .Where(x => x is > 0 and <= 3)
+                              .Select(x => (SlotType)x)
+                              .Pad(3, SlotType.None)
+                              .ToList();
+
+        return (slots[0], slots[1], slots[2]);
+    }
+
+    private (string text, byte points) DeserializeSkill(Queue<byte> data)
+    {
+        if (data.Dequeue() != SlotSignal)
+            throw new Exception("error in data");
+
+        var skillLength = data.Dequeue();
+
+        if (data.Dequeue() != SlotSignal)
+            throw new Exception("error in data");
+
+        var textLength = data.Dequeue();
+
+        if (textLength != skillLength - 4)
+            throw new Exception("error in data");
+
+        var text = Encoding.ASCII.GetString(Enumerable.Range(0, textLength)
+                                                      .Select(_ => data.Dequeue())
+                                                      .ToArray());
+
+        if (data.Dequeue() != TextPointSeparatorSignal)
+            throw new Exception("error in data");
+
+        var points = data.Dequeue();
+
+        return (text, points);
+    }
+
+    private List<Queue<byte>> SplitIntoTalismanData(Queue<byte> data)
+    {
+        var result = new List<Queue<byte>>();
+        while (data.Count > 0)
+        {
+            if (data.Dequeue() != SlotSignal)
+                throw new Exception("error in data");
+
+            var dataLength = data.Dequeue();
+            var talisman = new Queue<byte>(Enumerable.Range(0, dataLength)
+                                                     .Select(_ => data.Dequeue())
+                                                     .ToList());
+            result.Add(talisman);
+        }
+
+        return result;
+    }
+
+    public class FileImportModel
     {
         [Required]
         public IReadOnlyList<IBrowserFile> Files { get; set; }
@@ -126,4 +243,13 @@
         public bool OverwriteExistingCollection { get; set; }
     }
 
+    public class WikiDbModel
+    {
+        [Required]
+        public string Data { get; set; }
+    }
+
+        private const int SlotDataSignal = 26;
+        private const int SlotSignal = 10;
+        private const int TextPointSeparatorSignal = 16;
 }
