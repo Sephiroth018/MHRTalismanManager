@@ -13,5 +13,7 @@
         public SlotType Slot3 { get; set; } = SlotType.None;
 
         public TalismanStatus TalismanStatus { get; set; } = TalismanStatus.Unevaluated;
+
+        public TalismanOperation? Operation { get; set; }
     }
 }

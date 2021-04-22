@@ -103,6 +103,7 @@
                                         @context.Slot3.GetDisplayName()
                                     </DisplayTemplate>
                                 </DataGridColumn>
+                                <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Operation)" Caption="Operation" Sortable="true"></DataGridColumn>
                             </DataGrid>
                             <Field>
                                 <Button Type="ButtonType.Button" Color="Color.Primary" Block="true" Clicked="@AcceptImportResult">Continue</Button>
