@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using MHRTalismanManager.Shared;
@@ -52,23 +50,22 @@ namespace MHRTalismanManager.Server.Controllers
             await using var stream = Request.Body;
             using var image = await Image.LoadAsync<Rgba32>(stream);
 
-            var points1 = 1;
-            int? points2 = null;
             image.Mutate(c => c.ProcessPixelRowsAsVector4((span, point) =>
                                                           {
-                                                              if (point.Y is not (316 or 367))
+                                                              var (_, y) = point;
+                                                              if (y is not (316 or 367))
                                                                   return;
 
                                                               var pixels = new List<Vector4> { span[Point1], span[Point2], span[Point3], span[Point4], span[Point5], span[Point6], span[Point7] };
                                                               var points = pixels.Count(p => new Rgba32(p).B > 200);
 
-                                                              switch (point.Y)
+                                                              switch (y)
                                                               {
                                                                   case 316:
-                                                                      points1 = points;
+                                                                      talisman.Skill1.Points = points;
                                                                       break;
                                                                   case 367 when points > 0:
-                                                                      points2 = points;
+                                                                      talisman.Skill2.Points = points;
                                                                       break;
                                                               }
                                                           }));
@@ -78,12 +75,11 @@ namespace MHRTalismanManager.Server.Controllers
                                                    "eng",
                                                    EngineMode.Default);
 
-            talisman.Skill1 = new TalismanSkill { Points = points1, Name = await DoSkillNameOcr(engine, image, 280) };
+            talisman.Skill1.Name = await DoSkillNameOcr(engine, image, 280);
+            talisman.Skill2.Name = talisman.Skill2.Points.HasValue
+                                       ? await DoSkillNameOcr(engine, image, 331)
+                                       : string.Empty;
 
-            if (points2.HasValue)
-                talisman.Skill2 = new TalismanSkill { Points = points1, Name = await DoSkillNameOcr(engine, image, 331) };
-
-            Console.WriteLine(JsonSerializer.Serialize(talisman));
             return talisman;
         }
 

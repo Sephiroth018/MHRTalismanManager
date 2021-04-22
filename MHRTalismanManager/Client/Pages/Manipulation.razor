@@ -1,117 +1,242 @@
 ﻿@page "/import"
-@using MoreLinq
 @using MHRTalismanManager.Shared
-@using System.Text.Json
-@using System.Text
 @using System.ComponentModel.DataAnnotations
-@inject HttpClient Http
-@inject ILocalStorageService localStorage
+@using System.Text.Json
+@inject HttpClient _http
+@inject ILocalStorageService _localStorage
 
-<EditForm Model="@_fileImportModel" OnSubmit="@ImportFiles">
-    <h3>Import Talismans from images</h3>
-
-    @if (_isImporting)
-    {
-        <p>Processing file @_currentFile of @MaxFiles</p>
-
-        <br/>
-        <br/>
-    }
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-
-    <InputFile multiple OnChange="@InputFilesChanged"></InputFile>
-    <br/><br/>
-    <InputCheckbox id="overwriteExisting" @bind-Value="_fileImportModel.OverwriteExistingCollection"></InputCheckbox>
-    <label for="overwriteExisting">Overwrite existing collection</label>
-    <br/><br/>
-    <button type="submit">Import</button>
-</EditForm>
-
-<br/><br/>
-
-<EditForm Model="@_wikiDbModel" OnSubmit="@DeserializeWikiDb">
-    <h3>Import from https://mhrise.wiki-db.com/sim/?hl=en</h3>
-
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-
-    <InputTextArea @bind-Value="_wikiDbModel.Data"></InputTextArea>
-    <br/><br/>
-    <button type="submit">Import</button>
-</EditForm>
-
-@if (_importResult.Count > 0)
-{
-    <br/>
-    <br/>
-    <h3>Import Result</h3>
-    <br/>
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Skill 1</th>
-            <th>Points</th>
-            <th>Skill 2</th>
-            <th>Points</th>
-            <th>Slot 1</th>
-            <th>Slot 2</th>
-            <th>Slot 3</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var talisman in _importResult)
-        {
-            <tr>
-                <td>@talisman.Skill1.Name</td>
-                <td>@talisman.Skill1.Points</td>
-                <td>@(talisman.Skill2?.Name ?? "-")</td>
-                <td>@(talisman.Skill2?.Points.ToString() ?? "-")</td>
-                <td>@talisman.Slot1.GetDisplayName()</td>
-                <td>@talisman.Slot2.GetDisplayName()</td>
-                <td>@talisman.Slot3.GetDisplayName()</td>
-            </tr>
-        }
-        </tbody>
-    </table>
-}
+<Tabs Pills="true" FullWidth="true" Justified="true" SelectedTab="@_selectedTab" SelectedTabChanged="@OnSelectedTabChanged">
+    <Items>
+        <Tab Name="@DefaultTab">Files</Tab>
+        <Tab Name="mhriseWikiDb">mhrise.wiki-db.com</Tab>
+    </Items>
+    <Content>
+        <TabPanel Name="@DefaultTab">
+            <Validations @ref="_fileImportValidationRef" Mode="ValidationMode.Manual" Model="@_fileImportModel" ValidateOnLoad="false">
+                <ValidationSummary/>
+                <Validation @ref="_fileImportUploadValidationRef" Validator="@ValidateFileImport">
+                    <Field>
+                        <FieldLabel>Screenshots (max 500KB per file, jpeg only)</FieldLabel>
+                        <FileEdit Multiple="true" Filter="Image/jpeg" Changed="@InputFilesChanged" AutoReset="false"></FileEdit>
+                    </Field>
+                </Validation>
+                <Field>
+                    <Check TValue="bool" @bind-Checked="@_fileImportModel.OverwriteExistingCollection">Overwrite existing collection</Check>
+                </Field>
+                <Button Type="ButtonType.Submit" Color="Color.Primary" Clicked="@ImportFiles" Disabled="@_isImporting">Import</Button>
+            </Validations>
+        </TabPanel>
+        <TabPanel Name="mhriseWikiDb">
+            <Tabs Pills="true" TabPosition="TabPosition.Left" SelectedTab="@_selectedMhriseWikiDbTab" SelectedTabChanged="name => _selectedMhriseWikiDbTab = name">
+                <Items>
+                    <Tab Name="@DefaultMhriseWikiDbTab">Import</Tab>
+                    <Tab Name="export">Export</Tab>
+                </Items>
+                <Content>
+                    <TabPanel Name="@DefaultMhriseWikiDbTab">
+                        <Validations Mode="ValidationMode.Auto" Model="@_mhRiseWikiDbImportModel" ValidateOnLoad="false">
+                            <ValidationSummary/>
+                            <Validation>
+                                <Field>
+                                    <FieldLabel>Data</FieldLabel>
+                                    <MemoEdit Rows="10" @bind-Text="_mhRiseWikiDbImportModel.Data"></MemoEdit>
+                                </Field>
+                            </Validation>
+                            <Field>
+                                <Check TValue="bool" @bind-Checked="@_mhRiseWikiDbImportModel.OverwriteExistingCollection">Overwrite existing collection</Check>
+                            </Field>
+                            <Button Type="ButtonType.Submit" Color="Color.Primary" Clicked="@ImportFromWikiDb" Disabled="@_isImporting">Import</Button>
+                        </Validations>
+                    </TabPanel>
+                    <TabPanel Name="export">
+                        <Field>
+                            <Button Type="ButtonType.Button" Color="Color.Primary" Clicked="@ExportToWikiDb" Disabled="@_isImporting">Export</Button>
+                        </Field>
+                        <Field>
+                            <FieldLabel>Data</FieldLabel>
+                            <MemoEdit Rows="10" Text="@_mhRiseWikiDbExportString"></MemoEdit>
+                        </Field>
+                    </TabPanel>
+                </Content>
+            </Tabs>
+        </TabPanel>
+    </Content>
+</Tabs>
+<Modal @ref="_importResultModalRef" Closing="@CancelClosing">
+    <ModalContent Size="ModalSize.ExtraLarge" Centered="true">
+        <ModalHeader>
+            <ModalTitle>Import Result</ModalTitle>
+            <CloseButton></CloseButton>
+        </ModalHeader>
+        <ModalBody>
+            <Steps SelectedStep="@_activeImportStep" SelectedStepChanged="@(() => { })">
+                <Items>
+                    <Step Name="@ImportProgressStep" Completed="@_importProgresssStepCompleted">Extracting data</Step>
+                    <Step Name="@ReviewDataStep" Completed="@_reviewDataStepCompleted">Review data</Step>
+                    <Step Name="@ProcessingProgressStep" Completed="@_processingProgressStepCompleted">Evaluate talismans</Step>
+                </Items>
+                <Content>
+                    <StepPanel Name="@ImportProgressStep">
+                        <Progress>
+                            <ProgressBar Value="@_fileProgress" Striped="@_fileProgressIndeterminate" Animated="@_fileProgressIndeterminate"></ProgressBar>
+                        </Progress>
+                    </StepPanel>
+                    <StepPanel Name="@ReviewDataStep">
+                        <Fields>
+                            <DataGrid TItem="Talisman" Data="@_importResult" ShowPager="true">
+                                <DataGridColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill1)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 1" Sortable="true"/>
+                                <DataGridNumericColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill1)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true"/>
+                                <DataGridColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill2)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 2" Sortable="true"/>
+                                <DataGridNumericColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill2)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true"/>
+                                <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Slot1)" Caption="Slot 1" Sortable="true">
+                                    <DisplayTemplate>
+                                        @context.Slot1.GetDisplayName()
+                                    </DisplayTemplate>
+                                </DataGridColumn>
+                                <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Slot2)" Caption="Slot 2" Sortable="true">
+                                    <DisplayTemplate>
+                                        @context.Slot2.GetDisplayName()
+                                    </DisplayTemplate>
+                                </DataGridColumn>
+                                <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Slot3)" Caption="Slot 3" Sortable="true">
+                                    <DisplayTemplate>
+                                        @context.Slot3.GetDisplayName()
+                                    </DisplayTemplate>
+                                </DataGridColumn>
+                            </DataGrid>
+                            <Field>
+                                <Button Type="ButtonType.Button" Color="Color.Primary" Block="true" Clicked="@AcceptImportResult">Continue</Button>
+                            </Field>
+                        </Fields>
+                    </StepPanel>
+                    <StepPanel Name="@ProcessingProgressStep"></StepPanel>
+                </Content>
+            </Steps>
+        </ModalBody>
+    </ModalContent>
+</Modal>
 
 @code {
-    private bool _isImporting;
+    private const string DefaultTab = "files";
+    private const string DefaultMhriseWikiDbTab = "import";
+    private const string ImportProgressStep = "importProgress";
+    private const string ReviewDataStep = "reviewData";
+    private const string ProcessingProgressStep = "processingProgress";
+    private const string TalismanDataKey = "talismans";
+    private string _mhRiseWikiDbExportString = string.Empty;
+    private bool _fileProgressIndeterminate;
+    private string _selectedTab = DefaultTab;
+    private string _selectedMhriseWikiDbTab = DefaultMhriseWikiDbTab;
+    private Modal _importResultModalRef;
+    private Validations _fileImportValidationRef;
+    private Validation _fileImportUploadValidationRef;
     private readonly FileImportModel _fileImportModel = new();
-    private readonly WikiDbModel _wikiDbModel = new();
-    private int _currentFile;
-
-    private int MaxFiles => _fileImportModel.Files.Count;
-
+    private readonly MhRiseWikiDbImportModel _mhRiseWikiDbImportModel = new();
+    private int? _currentFile;
+    private int _fileProgress;
+    private bool _overwriteExistingCollection;
+    private bool _isImporting;
+    private string _activeImportStep = ImportProgressStep;
+    private bool _importProgresssStepCompleted;
+    private bool _reviewDataStepCompleted;
+    private bool _processingProgressStepCompleted;
     private readonly List<Talisman> _importResult = new();
+
+    public class FileImportModel
+    {
+        public IReadOnlyList<IFileEntry> Files { get; set; } = new List<IFileEntry>();
+
+        public bool OverwriteExistingCollection { get; set; } = false;
+    }
+
+    public class MhRiseWikiDbImportModel
+    {
+        [Required]
+        public string Data { get; set; }
+
+        public bool OverwriteExistingCollection { get; set; } = false;
+    }
+
+    private void ValidateFileImport(ValidatorEventArgs e)
+    {
+        if (_fileImportModel.Files.Count == 0)
+        {
+            e.ErrorText = "No files selected";
+            e.Status = ValidationStatus.Error;
+        }
+        else if (_fileImportModel.Files.Any(f => f.Size > 500000))
+        {
+            e.ErrorText = "Files should not be bigger than 500KB";
+            e.Status = ValidationStatus.Error;
+        }
+        else
+        {
+            e.ErrorText = null;
+            e.Status = ValidationStatus.Success;
+        }
+    }
 
     private async void ImportFiles()
     {
-        _importResult.Clear();
+        if (!_fileImportValidationRef.ValidateAll())
+        {
+            return;
+        }
+
+        _importProgresssStepCompleted = false;
+        _reviewDataStepCompleted = false;
+        _processingProgressStepCompleted = false;
+        _fileProgressIndeterminate = false;
         _isImporting = true;
+        _activeImportStep = ImportProgressStep;
+        _importResult.Clear();
+        _importResultModalRef.Show();
 
         try
         {
-            if (_fileImportModel.OverwriteExistingCollection)
-            {
-                await localStorage.RemoveItemAsync("talismans");
-            }
-
             for (var i = 0; i < _fileImportModel.Files.Count; i++)
             {
                 var file = _fileImportModel.Files[i];
                 _currentFile = i + 1;
+                _fileProgress = (int)((double)_currentFile / _fileImportModel.Files.Count * 100);
                 StateHasChanged();
 
                 var talisman = await ProcessFile(file);
                 _importResult.Add(talisman);
-                Console.WriteLine(JsonSerializer.Serialize(talisman));
-                StateHasChanged();
             }
 
-            await localStorage.SetItemAsync("talismans", JsonSerializer.Serialize(_importResult));
+            _overwriteExistingCollection = _fileImportModel.OverwriteExistingCollection;
+            _activeImportStep = ReviewDataStep;
+            _importProgresssStepCompleted = true;
+        }
+        finally
+        {
+            _fileProgress = 0;
+            _isImporting = false;
+            StateHasChanged();
+        }
+    }
+
+    private void ImportFromWikiDb()
+    {
+        _importProgresssStepCompleted = false;
+        _reviewDataStepCompleted = false;
+        _processingProgressStepCompleted = false;
+        _importResult.Clear();
+        _isImporting = true;
+        _fileProgressIndeterminate = true;
+        _currentFile = null;
+        _importResultModalRef.Show();
+
+        try
+        {
+            var talismans = MhRiseWikiDbSerializer.Deserialize(_mhRiseWikiDbImportModel.Data);
+
+            _importResult.AddRange(talismans);
+
+            _overwriteExistingCollection = _mhRiseWikiDbImportModel.OverwriteExistingCollection;
+            _activeImportStep = ReviewDataStep;
+            _importProgresssStepCompleted = true;
         }
         finally
         {
@@ -120,136 +245,59 @@
         }
     }
 
-    private async Task<Talisman> ProcessFile(IBrowserFile file)
+    private async void ExportToWikiDb()
     {
-        var response = await Http.PostAsync("/ocr", new StreamContent(file.OpenReadStream()));
+        if (!await _localStorage.ContainKeyAsync(TalismanDataKey))
+        {
+            return;
+        }
+
+        var talismanData = JsonSerializer.Deserialize<List<Talisman>>(await _localStorage.GetItemAsStringAsync(TalismanDataKey));
+
+        _mhRiseWikiDbExportString = MhRiseWikiDbSerializer.Serialize(talismanData);
+        StateHasChanged();
+    }
+
+    private async Task<Talisman> ProcessFile(IFileEntry file)
+    {
+        var response = await _http.PostAsync("/ocr", new StreamContent(file.OpenReadStream()));
 
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Talisman>();
     }
 
-    private void InputFilesChanged(InputFileChangeEventArgs e)
+    private void InputFilesChanged(FileChangedEventArgs e)
     {
-        _fileImportModel.Files = e.GetMultipleFiles(int.MaxValue);
+        _fileImportModel.Files = e.Files;
+        _fileImportUploadValidationRef.Validate();
     }
 
-    private async void DeserializeWikiDb()
+    private static void CancelClosing(ModalClosingEventArgs e)
     {
-        _importResult.Clear();
-
-        var data = new Queue<byte>(Convert.FromBase64String(_wikiDbModel.Data));
-
-        var talismans = SplitIntoTalismanData(data)
-            .Select(DeserializeTalismanData)
-            .ToList();
-
-        _importResult.AddRange(talismans);
-        Console.WriteLine(JsonSerializer.Serialize(_importResult));
-        StateHasChanged();
+        if (e.CloseReason != CloseReason.UserClosing)
+            e.Cancel = true;
     }
 
-    private Talisman DeserializeTalismanData(Queue<byte> data)
+    private void OnSelectedTabChanged(string name)
     {
-        var result = new Talisman();
+        _selectedTab = name;
+    }
 
-        var (text1, points1) = DeserializeSkill(data);
-        result.Skill1 = new TalismanSkill { Name = text1, Points = points1 };
-
-
-        if (data.Peek() != SlotDataSignal)
+    private async Task AcceptImportResult()
+    {
+        if (_overwriteExistingCollection || !await _localStorage.ContainKeyAsync(TalismanDataKey))
         {
-            var (text2, points2) = DeserializeSkill(data);
-            result.Skill2 = new TalismanSkill { Name = text2, Points = points2 };
+            await _localStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(_importResult));
+        }
+        else
+        {
+            var existingData = JsonSerializer.Deserialize<List<Talisman>>(await _localStorage.GetItemAsStringAsync(TalismanDataKey)) ?? new List<Talisman>();
+            existingData.AddRange(_importResult);
+            await _localStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(existingData));
         }
 
-        var (slot1, slot2, slot3) = DeserializeSlots(data);
-
-        result.Slot1 = slot1;
-        result.Slot2 = slot2;
-        result.Slot3 = slot3;
-
-        return result;
+        _importResultModalRef.Hide();
     }
 
-    private (SlotType slot1, SlotType slot2, SlotType slot3) DeserializeSlots(Queue<byte> data)
-    {
-        if (data.Dequeue() != SlotDataSignal)
-            throw new Exception("error in data");
-
-        var slotDataLength = data.Dequeue();
-
-        var slots = Enumerable.Repeat(0, slotDataLength)
-                              .Select(_ => data.Dequeue())
-                              .Where(x => x is > 0 and <= 3)
-                              .Select(x => (SlotType)x)
-                              .Pad(3, SlotType.None)
-                              .ToList();
-
-        return (slots[0], slots[1], slots[2]);
-    }
-
-    private (string text, byte points) DeserializeSkill(Queue<byte> data)
-    {
-        if (data.Dequeue() != SlotSignal)
-            throw new Exception("error in data");
-
-        var skillLength = data.Dequeue();
-
-        if (data.Dequeue() != SlotSignal)
-            throw new Exception("error in data");
-
-        var textLength = data.Dequeue();
-
-        if (textLength != skillLength - 4)
-            throw new Exception("error in data");
-
-        var text = Encoding.ASCII.GetString(Enumerable.Range(0, textLength)
-                                                      .Select(_ => data.Dequeue())
-                                                      .ToArray());
-
-        if (data.Dequeue() != TextPointSeparatorSignal)
-            throw new Exception("error in data");
-
-        var points = data.Dequeue();
-
-        return (text, points);
-    }
-
-    private List<Queue<byte>> SplitIntoTalismanData(Queue<byte> data)
-    {
-        var result = new List<Queue<byte>>();
-        while (data.Count > 0)
-        {
-            if (data.Dequeue() != SlotSignal)
-                throw new Exception("error in data");
-
-            var dataLength = data.Dequeue();
-            var talisman = new Queue<byte>(Enumerable.Range(0, dataLength)
-                                                     .Select(_ => data.Dequeue())
-                                                     .ToList());
-            result.Add(talisman);
-        }
-
-        return result;
-    }
-
-    public class FileImportModel
-    {
-        [Required]
-        public IReadOnlyList<IBrowserFile> Files { get; set; }
-
-        [Required]
-        public bool OverwriteExistingCollection { get; set; }
-    }
-
-    public class WikiDbModel
-    {
-        [Required]
-        public string Data { get; set; }
-    }
-
-        private const int SlotDataSignal = 26;
-        private const int SlotSignal = 10;
-        private const int TextPointSeparatorSignal = 16;
 }

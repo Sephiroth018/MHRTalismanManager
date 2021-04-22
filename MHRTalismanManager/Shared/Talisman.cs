@@ -2,9 +2,9 @@
 {
     public class Talisman
     {
-        public TalismanSkill Skill1 { get; set; }
+        public TalismanSkill Skill1 { get; set; } = new();
 
-        public TalismanSkill Skill2 { get; set; }
+        public TalismanSkill Skill2 { get; set; } = new();
 
         public SlotType Slot1 { get; set; } = SlotType.None;
 
