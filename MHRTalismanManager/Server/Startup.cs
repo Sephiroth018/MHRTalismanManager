@@ -35,6 +35,7 @@ namespace MHRTalismanManager.Server
                                                                  EngineMode.Default);
                                   });
             services.Configure<TesseractEngine>(options => { });
+            services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_CONNECTIONSTRING"]);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +63,9 @@ namespace MHRTalismanManager.Server
                              {
                                  endpoints.MapRazorPages();
                                  endpoints.MapControllers();
-                                 endpoints.MapFallbackToFile("index.html");
+                  
+        
+   endpoints.MapFallbackToFile("index.html");
                              });
         }
     }

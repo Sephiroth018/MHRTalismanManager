@@ -2,9 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>420b3a5c-0ebf-4877-a6b8-f84677c79994</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/b5c44bd4-433f-4f9e-bc20-0feb9979e5e8/resourcegroups/cdsTLK3LWVFTZRUR2FIDZF437QEVCI4WZQZZX7STSM3CA4G7S7NPHKA-North-Central-US/providers/Microsoft.Insights/components/MHRTalismanManager</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.5" />
     <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3" />
     <PackageReference Include="Tesseract" Version="4.1.1" />
