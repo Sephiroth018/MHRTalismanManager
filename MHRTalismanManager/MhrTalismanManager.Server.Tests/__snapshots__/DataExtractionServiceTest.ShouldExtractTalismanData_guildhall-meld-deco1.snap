@@ -1,0 +1,15 @@
+﻿{
+  "Operation": "Ignore",
+  "Skill1": {
+    "Name": "Pierce Up",
+    "Points": 1
+  },
+  "Skill2": {
+    "Name": "Defense Boost",
+    "Points": 1
+  },
+  "Slot1": "None",
+  "Slot2": "None",
+  "Slot3": "None",
+  "TalismanStatus": "Unevaluated"
+}

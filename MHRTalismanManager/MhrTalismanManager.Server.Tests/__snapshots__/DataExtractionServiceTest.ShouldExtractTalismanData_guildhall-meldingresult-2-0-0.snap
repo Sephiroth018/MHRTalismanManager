@@ -1,0 +1,15 @@
+﻿{
+  "Operation": "Add",
+  "Skill1": {
+    "Name": "Bubbly Dance",
+    "Points": 1
+  },
+  "Skill2": {
+    "Name": "Muck Resistance",
+    "Points": 1
+  },
+  "Slot1": "Level2",
+  "Slot2": "None",
+  "Slot3": "None",
+  "TalismanStatus": "Unevaluated"
+}

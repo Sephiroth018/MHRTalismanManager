@@ -1,0 +1,15 @@
+﻿{
+  "Operation": "Add",
+  "Skill1": {
+    "Name": "Item Prolonger",
+    "Points": 1
+  },
+  "Skill2": {
+    "Name": "Power Prolonger",
+    "Points": 1
+  },
+  "Slot1": "Level1",
+  "Slot2": "None",
+  "Slot3": "None",
+  "TalismanStatus": "Unevaluated"
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Operation": "Add",
+  "Skill1": {
+    "Name": "Hellfire Cloak",
+    "Points": 1
+  },
+  "Skill2": {
+    "Name": "",
+    "Points": null
+  },
+  "Slot1": "None",
+  "Slot2": "None",
+  "Slot3": "None",
+  "TalismanStatus": "Unevaluated"
+}
