@@ -1,7 +1,27 @@
 ﻿@page "/"
+@using MHRTalismanManager.Shared
+@using System.Text.Json
+@inject ILocalStorageService _localStorage
 
 <h3>Talismans</h3>
+<DataGrid TItem="Talisman" Data="@_data" ShowPager="true" ShowPageSizes="true" Sortable="true" Editable="false" SortMode="DataGridSortMode.Multiple" Resizable="true" ResizeMode="DataGridResizeMode.Header" PageSize="20" PageSizes="new []{5, 10, 20, 50, 100}">
+    <DataGridColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill1)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 1" Sortable="true"/>
+    <DataGridNumericColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill1)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true"/>
+    <DataGridColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill2)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 2" Sortable="true"/>
+    <DataGridNumericColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill2)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true"/>
+    <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Slot1)" Caption="Slot 1" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider"/>
+    <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Slot2)" Caption="Slot 2" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider"/>
+    <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Slot3)" Caption="Slot 3" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider"/>
+    <DataGridSelectColumn TItem="Talisman" Field="@nameof(Talisman.TalismanStatus)" Caption="Talisman Status" Sortable="true" Editable="true"></DataGridSelectColumn>
+</DataGrid>
 
 @code {
+    private readonly IFormatProvider _slotEnumFormatProvider = new SlotEnumFormatProvider();
+    private List<Talisman> _data = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _data = await _localStorage.GetItemAsync<List<Talisman>>("talismans");
+    }
 
 }
