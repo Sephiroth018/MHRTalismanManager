@@ -54,7 +54,7 @@ namespace MHRTalismanManager.Client.Shared
 
             result.Add(SlotDataSignal);
 
-            if (talisman.Skill2 != null)
+            if (talisman.Skill2.Points != null)
                 result.AddRange(SerializeSkill(talisman.Skill2));
 
             result.AddRange(SerializeSkill(talisman.Skill1));
