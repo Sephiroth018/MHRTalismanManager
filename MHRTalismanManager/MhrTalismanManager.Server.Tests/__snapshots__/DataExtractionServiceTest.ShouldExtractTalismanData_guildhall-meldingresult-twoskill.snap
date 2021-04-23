@@ -1,0 +1,15 @@
+﻿{
+  "Operation": "Add",
+  "Skill1": {
+    "Name": "Earplugs",
+    "Points": 1
+  },
+  "Skill2": {
+    "Name": "Botanist",
+    "Points": 1
+  },
+  "Slot1": "None",
+  "Slot2": "None",
+  "Slot3": "None",
+  "TalismanStatus": "Unevaluated"
+}

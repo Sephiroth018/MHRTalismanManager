@@ -6,7 +6,6 @@ using System.Numerics;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using MHRTalismanManager.Shared;
-using Microsoft.AspNetCore.Mvc;
 using MoreLinq;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
@@ -17,11 +16,9 @@ using Image = SixLabors.ImageSharp.Image;
 using Rectangle = SixLabors.ImageSharp.Rectangle;
 using Size = SixLabors.ImageSharp.Size;
 
-namespace MHRTalismanManager.Server.Controllers
+namespace MHRTalismanManager.Server.Services
 {
-    [Route("[controller]")]
-    [ApiController]
-    public class OcrController : ControllerBase
+    public class DataExtractionService
     {
         private const int Point1 = 48;
         private const int Point2 = 64;
@@ -38,16 +35,14 @@ namespace MHRTalismanManager.Server.Controllers
 
         private readonly TesseractEngine _engine;
 
-        public OcrController(TesseractEngine engine)
+        public DataExtractionService(TesseractEngine engine)
         {
             _engine = engine;
         }
 
-        [HttpPost]
-        public async Task<TalismanDto> DoOcr()
+        public async Task<TalismanDto> ExtractFromImage(Stream stream)
         {
             var talisman = new TalismanDto();
-            await using var stream = Request.Body;
             using var image = await Image.LoadAsync<Rgba32>(stream);
 
             var meldingText = await GetText(_engine, image, new Rectangle(425, 102, 169, 23), new Size(700, 50));

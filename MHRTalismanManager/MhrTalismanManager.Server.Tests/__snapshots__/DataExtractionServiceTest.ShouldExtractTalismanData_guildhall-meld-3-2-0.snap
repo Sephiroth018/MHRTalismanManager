@@ -1,0 +1,15 @@
+﻿{
+  "Operation": "Remove",
+  "Skill1": {
+    "Name": "Recovery Speed",
+    "Points": 1
+  },
+  "Skill2": {
+    "Name": "Evade Window",
+    "Points": 1
+  },
+  "Slot1": "Level3",
+  "Slot2": "Level2",
+  "Slot3": "None",
+  "TalismanStatus": "Unevaluated"
+}

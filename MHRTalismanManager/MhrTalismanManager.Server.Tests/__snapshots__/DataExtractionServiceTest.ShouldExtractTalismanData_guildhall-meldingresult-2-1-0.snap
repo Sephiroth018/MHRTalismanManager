@@ -1,0 +1,15 @@
+﻿{
+  "Operation": "Add",
+  "Skill1": {
+    "Name": "Reload Speed",
+    "Points": 3
+  },
+  "Skill2": {
+    "Name": "Counterstrike",
+    "Points": 1
+  },
+  "Slot1": "Level2",
+  "Slot2": "Level1",
+  "Slot3": "None",
+  "TalismanStatus": "Unevaluated"
+}

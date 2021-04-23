@@ -1,3 +1,4 @@
+using MHRTalismanManager.Server.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
@@ -34,7 +35,7 @@ namespace MHRTalismanManager.Server
                                                                  "eng",
                                                                  EngineMode.Default);
                                   });
-            services.Configure<TesseractEngine>(options => { });
+            services.AddSingleton<DataExtractionService>();
             services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_CONNECTIONSTRING"]);
         }
 
@@ -63,9 +64,8 @@ namespace MHRTalismanManager.Server
                              {
                                  endpoints.MapRazorPages();
                                  endpoints.MapControllers();
-                  
-        
-   endpoints.MapFallbackToFile("index.html");
+
+                                 endpoints.MapFallbackToFile("index.html");
                              });
         }
     }

@@ -271,7 +271,7 @@
 
     private async Task<TalismanDto> ProcessFile(IFileEntry file)
     {
-        var response = await _http.PostAsync("/ocr", new StreamContent(file.OpenReadStream()));
+        var response = await _http.PostAsync("/imagerecognition", new StreamContent(file.OpenReadStream()));
 
         response.EnsureSuccessStatusCode();
 
