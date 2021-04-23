@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHRTalismanManager.Client",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHRTalismanManager.Shared", "MHRTalismanManager\Shared\MHRTalismanManager.Shared.csproj", "{EFF9763C-FFA0-4293-BBB4-7894F155AC12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHRTalismanManager.Server.Tests", "MHRTalismanManager.Server.Tests\MHRTalismanManager.Server.Tests.csproj", "{24859249-F780-4B69-A63E-1B23F21248C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MhrTalismanManager.Server.Tests", "MHRTalismanManager\MhrTalismanManager.Server.Tests\MhrTalismanManager.Server.Tests.csproj", "{05F4D7F6-15A4-4701-B72B-6B1700ED55A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{EFF9763C-FFA0-4293-BBB4-7894F155AC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFF9763C-FFA0-4293-BBB4-7894F155AC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFF9763C-FFA0-4293-BBB4-7894F155AC12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{24859249-F780-4B69-A63E-1B23F21248C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24859249-F780-4B69-A63E-1B23F21248C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{24859249-F780-4B69-A63E-1B23F21248C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{24859249-F780-4B69-A63E-1B23F21248C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F4D7F6-15A4-4701-B72B-6B1700ED55A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F4D7F6-15A4-4701-B72B-6B1700ED55A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F4D7F6-15A4-4701-B72B-6B1700ED55A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F4D7F6-15A4-4701-B72B-6B1700ED55A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
