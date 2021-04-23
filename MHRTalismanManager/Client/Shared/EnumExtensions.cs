@@ -13,7 +13,9 @@ namespace MHRTalismanManager.Client.Shared
                             .GetMember(enumValue.ToString())
                             .First()
                             .GetCustomAttribute<DisplayAttribute>()
-                            .GetName();
+                            ?
+                            .GetName()
+                   ?? enumValue.ToString();
         }
     }
 }

@@ -6,7 +6,6 @@ using System.Numerics;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using MHRTalismanManager.Shared;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using MoreLinq;
 using SixLabors.ImageSharp;
@@ -37,25 +36,21 @@ namespace MHRTalismanManager.Server.Controllers
                                                                        { "\u2014", "-" },
                                                                    };
 
-        private readonly IWebHostEnvironment _env;
+        private readonly TesseractEngine _engine;
 
-        public OcrController(IWebHostEnvironment env)
+        public OcrController(TesseractEngine engine)
         {
-            _env = env;
+            _engine = engine;
         }
 
         [HttpPost]
-        public async Task<Talisman> DoOcr()
+        public async Task<TalismanDto> DoOcr()
         {
-            var talisman = new Talisman();
+            var talisman = new TalismanDto();
             await using var stream = Request.Body;
             using var image = await Image.LoadAsync<Rgba32>(stream);
-            using var engine = new TesseractEngine(_env.ContentRootFileProvider.GetFileInfo("tesseract")
-                                                       .PhysicalPath,
-                                                   "eng",
-                                                   EngineMode.Default);
 
-            var meldingText = await GetText(engine, image, new Rectangle(425, 102, 169, 23), new Size(700, 50));
+            var meldingText = await GetText(_engine, image, new Rectangle(425, 102, 169, 23), new Size(700, 50));
 
             var (operation, infoRectangle) = meldingText switch
             {
@@ -119,10 +114,17 @@ namespace MHRTalismanManager.Server.Controllers
                                                               }
                                                           }));
 
-            talisman.Skill1.Name = await GetText(engine, image, new Rectangle(26, 178, 216, 18), new Size(700, 50));
+            talisman.Skill1.Name = await GetText(_engine, image, new Rectangle(26, 178, 216, 18), new Size(700, 50));
+
+            //await image.SaveAsync(_env.ContentRootFileProvider.GetFileInfo(Guid.NewGuid() + ".jpg")
+            //                          .PhysicalPath);
             talisman.Skill2.Name = talisman.Skill2.Points.HasValue
-                                       ? await GetText(engine, image, new Rectangle(26, 229, 216, 18), new Size(700, 50))
+                                       ? await GetText(_engine, image, new Rectangle(26, 229, 216, 18), new Size(700, 50))
                                        : string.Empty;
+
+            if (hasSlot1 && slot1Points == 0 || hasSlot2 && slot2Points == 0 || hasSlot3 && slot3Points == 0)
+                //decoration detected, ignoring this talisman
+                talisman.Operation = TalismanOperation.Ignore;
 
             if (hasSlot1)
                 talisman.Slot1 = (SlotType)slot1Points;
@@ -139,7 +141,7 @@ namespace MHRTalismanManager.Server.Controllers
             var testColor = new Rgba32(testPixel);
             var testData = new[] { testColor.R, testColor.G, testColor.B };
 
-            return testData.Min() >= 100 && testData.Max() <= testData.Min() + 10;
+            return testData.All(x => x > 100);
         }
 
         private async Task<string> GetText(TesseractEngine engine, Image<Rgba32> image, Rectangle cropRectangle, Size resizeSize, int invertAmount = 1)

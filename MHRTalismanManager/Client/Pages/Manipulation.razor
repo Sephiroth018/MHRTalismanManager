@@ -1,4 +1,5 @@
 ﻿@page "/import"
+@using MoreLinq
 @using MHRTalismanManager.Shared
 @using System.ComponentModel.DataAnnotations
 @using System.Text.Json
@@ -83,27 +84,34 @@
                     </StepPanel>
                     <StepPanel Name="@ReviewDataStep">
                         <Fields>
-                            <DataGrid TItem="Talisman" Data="@_importResult" ShowPager="true">
-                                <DataGridColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill1)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 1" Sortable="true"/>
-                                <DataGridNumericColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill1)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true"/>
-                                <DataGridColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill2)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 2" Sortable="true"/>
-                                <DataGridNumericColumn TItem="Talisman" Field="@($"{nameof(Talisman.Skill2)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true"/>
-                                <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Slot1)" Caption="Slot 1" Sortable="true">
-                                    <DisplayTemplate>
-                                        @context.Slot1.GetDisplayName()
-                                    </DisplayTemplate>
-                                </DataGridColumn>
-                                <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Slot2)" Caption="Slot 2" Sortable="true">
-                                    <DisplayTemplate>
-                                        @context.Slot2.GetDisplayName()
-                                    </DisplayTemplate>
-                                </DataGridColumn>
-                                <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Slot3)" Caption="Slot 3" Sortable="true">
-                                    <DisplayTemplate>
-                                        @context.Slot3.GetDisplayName()
-                                    </DisplayTemplate>
-                                </DataGridColumn>
-                                <DataGridColumn TItem="Talisman" Field="@nameof(Talisman.Operation)" Caption="Operation" Sortable="true"></DataGridColumn>
+                            <DataGrid TItem="TalismanDto" Data="@_importResult" ShowPager="true" ShowPageSizes="true" CommandMode="DataGridCommandMode.Default" EditMode="DataGridEditMode.Inline" Editable="true" Sortable="true" SortMode="DataGridSortMode.Multiple" Resizable="true" ResizeMode="DataGridResizeMode.Header">
+                                <DataGridColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill1)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 1" Sortable="true" Editable="false"/>
+                                <DataGridNumericColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill1)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true" Editable="false"/>
+                                <DataGridColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill2)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 2" Sortable="true" Editable="false"/>
+                                <DataGridNumericColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill2)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true" Editable="false"/>
+                                <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot1)" Caption="Slot 1" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
+                                <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot2)" Caption="Slot 2" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
+                                <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot3)" Caption="Slot 3" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
+                                <DataGridSelectColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Operation)" Caption="Operation" Sortable="true" Editable="true">
+                                    <EditTemplate>
+                                        <Select TValue="TalismanOperation" SelectedValue="@((TalismanOperation)( context.CellValue ))" SelectedValueChanged="@(( v ) => context.CellValue = v)">
+                                            @foreach(var value in Enum.GetValues<TalismanOperation>()) {
+                                                <SelectItem TValue="TalismanOperation" Value="@value">@value.GetDisplayName()</SelectItem>
+                                            }
+                                        </Select>
+                                    </EditTemplate>
+                                </DataGridSelectColumn>
+                                <DataGridCommandColumn TItem="TalismanDto" NewCommandAllowed="false" DeleteCommandAllowed="false">
+                                    <EditCommandTemplate>
+                                        <Button Color="Color.Primary" Clicked="@context.Clicked">@context.LocalizationString</Button>
+                                    </EditCommandTemplate>
+                                    <SaveCommandTemplate>
+                                        <Button Color="Color.Primary" Clicked="@context.Clicked">@context.LocalizationString</Button>
+                                    </SaveCommandTemplate>
+                                    <CancelCommandTemplate>
+                                        <Button Color="Color.Secondary" Clicked="@context.Clicked">@context.LocalizationString</Button>
+                                    </CancelCommandTemplate>
+                                </DataGridCommandColumn>
                             </DataGrid>
                             <Field>
                                 <Button Type="ButtonType.Button" Color="Color.Primary" Block="true" Clicked="@AcceptImportResult">Continue</Button>
@@ -141,7 +149,8 @@
     private bool _importProgresssStepCompleted;
     private bool _reviewDataStepCompleted;
     private bool _processingProgressStepCompleted;
-    private readonly List<Talisman> _importResult = new();
+    private readonly List<TalismanDto> _importResult = new();
+    private readonly IFormatProvider _slotEnumFormatProvider = new SlotEnumFormatProvider();
 
     public class FileImportModel
     {
@@ -259,13 +268,13 @@
         StateHasChanged();
     }
 
-    private async Task<Talisman> ProcessFile(IFileEntry file)
+    private async Task<TalismanDto> ProcessFile(IFileEntry file)
     {
         var response = await _http.PostAsync("/ocr", new StreamContent(file.OpenReadStream()));
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Talisman>();
+        return await response.Content.ReadFromJsonAsync<TalismanDto>();
     }
 
     private void InputFilesChanged(FileChangedEventArgs e)
@@ -289,16 +298,21 @@
     {
         if (_overwriteExistingCollection || !await _localStorage.ContainKeyAsync(TalismanDataKey))
         {
-            await _localStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(_importResult));
+            await _localStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(_importResult.Where(t => t.Operation == TalismanOperation.Add)
+                                                                                                    .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t)))));
         }
         else
         {
             var existingData = JsonSerializer.Deserialize<List<Talisman>>(await _localStorage.GetItemAsStringAsync(TalismanDataKey)) ?? new List<Talisman>();
-            existingData.AddRange(_importResult);
+            existingData.AddRange(_importResult.Where(t => t.Operation == TalismanOperation.Add)
+                                               .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t))));
+            _importResult.Where(t => t.Operation == TalismanOperation.Remove)
+                         .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t)))
+                         .Select(tr => { return existingData.FirstOrDefault(te => JsonSerializer.Serialize(te) == JsonSerializer.Serialize(tr)); })
+                         .ForEach(te => existingData.Remove(te));
             await _localStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(existingData));
         }
 
         _importResultModalRef.Hide();
     }
-
 }

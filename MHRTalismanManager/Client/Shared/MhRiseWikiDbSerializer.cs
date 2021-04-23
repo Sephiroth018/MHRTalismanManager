@@ -83,7 +83,7 @@ namespace MHRTalismanManager.Client.Shared
             return result;
         }
 
-        public static IEnumerable<Talisman> Deserialize(string dataString)
+        public static IEnumerable<TalismanDto> Deserialize(string dataString)
         {
             var data = new Queue<byte>(Convert.FromBase64String(dataString));
 
@@ -93,9 +93,9 @@ namespace MHRTalismanManager.Client.Shared
             return talismans;
         }
 
-        private static Talisman DeserializeTalismanData(Queue<byte> data)
+        private static TalismanDto DeserializeTalismanData(Queue<byte> data)
         {
-            var result = new Talisman();
+            var result = new TalismanDto { Operation = TalismanOperation.Add };
 
             var (text1, points1) = DeserializeSkill(data);
             result.Skill1 = new TalismanSkill { Name = text1, Points = points1 };

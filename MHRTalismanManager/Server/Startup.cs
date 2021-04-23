@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Tesseract;
 
 namespace MHRTalismanManager.Server
 {
@@ -24,6 +25,16 @@ namespace MHRTalismanManager.Server
             services.AddRazorPages();
             services.Configure<KestrelServerOptions>(options => { options.AllowSynchronousIO = true; });
             services.Configure<IISServerOptions>(options => { options.AllowSynchronousIO = true; });
+            services.AddSingleton(provider =>
+                                  {
+                                      var env = provider.GetService<IWebHostEnvironment>();
+
+                                      return new TesseractEngine(env.ContentRootFileProvider.GetFileInfo("tesseract")
+                                                                    .PhysicalPath,
+                                                                 "eng",
+                                                                 EngineMode.Default);
+                                  });
+            services.Configure<TesseractEngine>(options => { });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
