@@ -58,4 +58,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="__snapshots__\" />
+  </ItemGroup>
+
 </Project>
