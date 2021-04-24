@@ -1,0 +1,6002 @@
+﻿[
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Speed",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Speed Eating",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Flinch Free",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Paralysis Resistance",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wall Runner",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blast Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Eating",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Counterstrike",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Leap of Faith",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Wide-Range",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Flinch Free",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Recovery Speed",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Sleep Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Weakness Exploit",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wide-Range",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Up",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level2",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Water Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Botanist",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Weakness Exploit",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Water Resistance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Weakness Exploit",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Constitution",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Protective Polish",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wirebug Whisperer",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Dragon Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blast Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Free Meal",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Leap of Faith",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level2",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Weakness Exploit",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Punishing Draw",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Flinch Free",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wirebug Whisperer",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Affinity Sliding",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blast Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bombardier",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wall Runner",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Special Ammo Boost",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Fire Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Slugger",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Constitution",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Horn Maestro",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Muck Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Attack Boost",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Thunder Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Razor Sharp",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Attack",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Punishing Draw",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Fire Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Fire Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Botanist",
+      "Points": 3
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Hunger Resistance",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Item Prolonger",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Sharpening",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bombardier",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Resentment",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Normal/Rapid Up",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Partbreaker",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Muck Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Botanist",
+      "Points": 2
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stun Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Thunder Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Poison Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Eating",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stun Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Razor Sharp",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Leap of Faith",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Flinch Free",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Diversion",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Geologist",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Sleep Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stamina Thief",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bombardier",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Affinity Sliding",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Speed",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Fire Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Poison Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Poison Attack",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Leap of Faith",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Wirebug Whisperer",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blast Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Partbreaker",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Steadiness",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Affinity Sliding",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Poison Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level2",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Horn Maestro",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Rapid Morph",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Thunder Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Hellfire Cloak",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Muck Resistance",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Thunder Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Hunger Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Poison Attack",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Hunger Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Agitator",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Ammo Up",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Fire Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Muck Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Slugger",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Diversion",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Window",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Free Meal",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Focus",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Punishing Draw",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blight Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Peak Performance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Resuscitate",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Slugger",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Up",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Slugger",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Geologist",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Wide-Range",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bombardier",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Rapid Morph",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Paralysis Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Hunger Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Latent Power",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Special Ammo Boost",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blast Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stamina Surge",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bombardier",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Slugger",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Sleep Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Speed Sharpening",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Muck Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Protective Polish",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Extender",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Razor Sharp",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Attack",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Extender",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Defense Boost",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Sleep Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Up",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Ice Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Latent Power",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Eating",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Thunder Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Punishing Draw",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Heroics",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wide-Range",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Divine Blessing",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recovery Speed",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Razor Sharp",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Water Attack",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Wide-Range",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Guard Up",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Poison Attack",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Thunder Attack",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Critical Element",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Geologist",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Sleep Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Poison Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Maximum Might",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Poison Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Resentment",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Hunger Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Guard Up",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Item Prolonger",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Hunger Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stamina Thief",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Leap of Faith",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Leap of Faith",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Stamina Thief",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Dragon Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Item Prolonger",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Recovery Up",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Fire Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Hellfire Cloak",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Extender",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Wall Runner",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Fire Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Partbreaker",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Slugger",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Diversion",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Constitution",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Agitator",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Normal/Rapid Up",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Up",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Offensive Guard",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Maximum Might",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Mind's Eye",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Mind's Eye",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bombardier",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Poison Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blast Attack",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Divine Blessing",
+      "Points": 2
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Attack Boost",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bombardier",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level2",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Peak Performance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Paralysis Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Partbreaker",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Diversion",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Muck Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level2",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Poison Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Sharpening",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Pierce Up",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Latent Power",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Ice Attack",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stun Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Guard Up",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Master Mounter",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Rapid Morph",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Fire Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blast Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Resuscitate",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Leap of Faith",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Resuscitate",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Sleep Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Resentment",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Aim Booster",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Latent Power",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Water Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Master Mounter",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level2",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Flinch Free",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Handicraft",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bubbly Dance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Good Luck",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Razor Sharp",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stun Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Punishing Draw",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Weakness Exploit",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Special Ammo Boost",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Guard Up",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Flinch Free",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Marathon Runner",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Punishing Draw",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Slugger",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level2",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Eating",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Dragon Attack",
+      "Points": 2
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Maximum Might",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Wall Runner",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Focus",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Critical Element",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Resentment",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Flinch Free",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Poison Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Item Prolonger",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Blast Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Maximum Might",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Defense Boost",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Guard",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Latent Power",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Protective Polish",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Eating",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blast Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Spare Shot",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Defense Boost",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Water Attack",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Defense Boost",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Punishing Draw",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Extender",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Diversion",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wide-Range",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Horn Maestro",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Spare Shot",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Tremor Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level2",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Weakness Exploit",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Spare Shot",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Free Meal",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 2
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bombardier",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Load Shells",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Steadiness",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Partbreaker",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bombardier",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Jump Master",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Latent Power",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Spare Shot",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Special Ammo Boost",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Water Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Poison Attack",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blast Attack",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Constitution",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wide-Range",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Punishing Draw",
+      "Points": 2
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Eating",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Punishing Draw",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Master Mounter",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Razor Sharp",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Sleep Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Steadiness",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Slugger",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Punishing Draw",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Thunder Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Poison Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Horn Maestro",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Flinch Free",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Master Mounter",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Water Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bombardier",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Extender",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Special Ammo Boost",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wide-Range",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Aim Booster",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Muck Resistance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Divine Blessing",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Counterstrike",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Stamina Surge",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Rapid Morph",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Attack Boost",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Fire Attack",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Power Prolonger",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Window",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Horn Maestro",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Dragon Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Guard Up",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Fortify",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Latent Power",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Marathon Runner",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Special Ammo Boost",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Up",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Constitution",
+      "Points": 1
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Extender",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Constitution",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Carving Pro",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Window",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Sharpening",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Partbreaker",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Wall Runner",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Counterstrike",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stun Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Spare Shot",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Resentment",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Fortify",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Constitution",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Wirebug Whisperer",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Constitution",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recovery Up",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Counterstrike",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Spare Shot",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Normal/Rapid Up",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Carving Pro",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Slugger",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Fire Attack",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Wide-Range",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Punishing Draw",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Master Mounter",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Hellfire Cloak",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Window",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Speed Sharpening",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Water Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Defense Boost",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Dragon Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Stamina Surge",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Eating",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Free Meal",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Latent Power",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Free Meal",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "Level1",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stun Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Rapid Morph",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Water Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Stamina Surge",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Normal/Rapid Up",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Fire Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Window",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Ice Attack",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Critical Eye",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Dragon Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Spare Shot",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Attack",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Punishing Draw",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Latent Power",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Fortify",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Thunder Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Partbreaker",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wirebug Whisperer",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Fire Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Constitution",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Razor Sharp",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wide-Range",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Defense Boost",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Protective Polish",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Wirebug Whisperer",
+      "Points": 3
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Agitator",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Fire Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Fire Attack",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Agitator",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Thunder Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Muck Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Window",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Weakness Exploit",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Sharpening",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Defense Boost",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Extender",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Fire Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wirebug Whisperer",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Critical Eye",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Carving Pro",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Ice Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Water Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Water Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Agitator",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wirebug Whisperer",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bombardier",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wall Runner",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Rapid Morph",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Dragon Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Water Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Evade Extender",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Affinity Sliding",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Maximum Might",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Poison Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Stamina Surge",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wirebug Whisperer",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Eating",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Water Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bombardier",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blight Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Resuscitate",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Slugger",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Normal/Rapid Up",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Botanist",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bombardier",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Critical Eye",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Up",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Fire Attack",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Fire Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Extender",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Carving Pro",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Aim Booster",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Poison Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Peak Performance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Guard Up",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Dragon Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bombardier",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Flinch Free",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Horn Maestro",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Partbreaker",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blast Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Ice Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Dragon Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Latent Power",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Thunder Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Guard",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stamina Thief",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Recovery Up",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Spare Shot",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Speed",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Weakness Exploit",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Constitution",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Water Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Thunder Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Botanist",
+      "Points": 2
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Constitution",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level3",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Dragon Resistance",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Dragon Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level2",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Weakness Exploit",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Paralysis Resistance",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Dragon Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Special Ammo Boost",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Poison Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Heroics",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Fortify",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "Level1",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Window",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Master Mounter",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Paralysis Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Free Meal",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Defense Boost",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Quick Sheath",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Punishing Draw",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Affinity Sliding",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Evade Extender",
+      "Points": 1
+    },
+    "Slot1": "Level2",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Critical Eye",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Wall Runner",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Item Prolonger",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Speed Eating",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Horn Maestro",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Sleep Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Carving Pro",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stun Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Tremor Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Rapid Morph",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bombardier",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Carving Pro",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Razor Sharp",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Dragon Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Resentment",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Partbreaker",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Hunger Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Wide-Range",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wall Runner",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Dragon Attack",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Muck Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recovery Up",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recovery Speed",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Carving Pro",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blight Resistance",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Dragon Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Partbreaker",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Rapid Morph",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Windproof",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Thunder Attack",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bubbly Dance",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Thunder Resistance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Steadiness",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Divine Blessing",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Thunder Attack",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Poison Resistance",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Thunder Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Quick Sheath",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Muck Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Attack Boost",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Steadiness",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Thunder Attack",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Flinch Free",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Rapid Morph",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Flinch Free",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Recoil Down",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Dragon Resistance",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Thunder Attack",
+      "Points": 2
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recoil Down",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wide-Range",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wirebug Whisperer",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bombardier",
+      "Points": 1
+    },
+    "Slot1": "Level1",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Aim Booster",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": null,
+      "Points": null
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Botanist",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Ice Attack",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Botanist",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Punishing Draw",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Bombardier",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Bludgeoner",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Defense Boost",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Fortify",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Paralysis Resistance",
+      "Points": 3
+    },
+    "Skill2": {
+      "Name": "Water Attack",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Stun Resistance",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Recovery Up",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Constitution",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Poison Attack",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Blight Resistance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Quick Sheath",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Botanist",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Reload Speed",
+      "Points": 2
+    },
+    "Skill2": {
+      "Name": "Botanist",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Geologist",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Speed Sharpening",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Recovery Speed",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Bubbly Dance",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Wirebug Whisperer",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Thunder Attack",
+      "Points": 2
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Thunder Attack",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Defense Boost",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Earplugs",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Ice Attack",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  },
+  {
+    "Operation": "Add",
+    "Skill1": {
+      "Name": "Geologist",
+      "Points": 1
+    },
+    "Skill2": {
+      "Name": "Botanist",
+      "Points": 1
+    },
+    "Slot1": "None",
+    "Slot2": "None",
+    "Slot3": "None",
+    "TalismanStatus": "Unevaluated"
+  }
+]
