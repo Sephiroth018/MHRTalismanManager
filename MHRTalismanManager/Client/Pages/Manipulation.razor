@@ -3,8 +3,8 @@
 @using MHRTalismanManager.Shared
 @using System.ComponentModel.DataAnnotations
 @using System.Text.Json
-@inject HttpClient _http
-@inject ILocalStorageService _localStorage
+@inject ILocalStorageService LocalStorage
+@inject HttpClient Http
 
 <Tabs Pills="true" FullWidth="true" Justified="true" SelectedTab="@_selectedTab" SelectedTabChanged="@OnSelectedTabChanged">
     <Items>
@@ -95,7 +95,7 @@
                                 <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot3)" Caption="Slot 3" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
                                 <DataGridSelectColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Operation)" Caption="Operation" Sortable="true" Editable="true">
                                     <EditTemplate>
-                                        <Select TValue="TalismanOperation" SelectedValue="@((TalismanOperation)( context.CellValue ))" SelectedValueChanged="@(( v ) => context.CellValue = v)">
+                                        <Select TValue="TalismanOperation" SelectedValue="@((TalismanOperation)context.CellValue)" SelectedValueChanged="@(( TalismanOperation v ) => context.CellValue = v)">
                                             @foreach(var value in Enum.GetValues<TalismanOperation>()) {
                                                 <SelectItem TValue="TalismanOperation" Value="@value">@value.GetDisplayName()</SelectItem>
                                             }
@@ -152,6 +152,7 @@
     private bool _processingProgressStepCompleted;
     private readonly List<TalismanDto> _importResult = new();
     private readonly IFormatProvider _slotEnumFormatProvider = new SlotEnumFormatProvider();
+    [Inject] private IApplicationInsights AppInsights { get; set; }
 
     public class FileImportModel
     {
@@ -194,6 +195,8 @@
             return;
         }
 
+        await AppInsights.TrackEvent("ImageImport");
+
         _importProgresssStepCompleted = false;
         _reviewDataStepCompleted = false;
         _processingProgressStepCompleted = false;
@@ -201,19 +204,19 @@
         _isImporting = true;
         _activeImportStep = ImportProgressStep;
         _importResult.Clear();
+        await AppInsights.StartTrackEvent("ImportResult");
         _importResultModalRef.Show();
+        _currentFile = 0;
 
         try
         {
-            for (var i = 0; i < _fileImportModel.Files.Count; i++)
+            foreach (var fileTask in _fileImportModel.Files.Select(ProcessFile))
             {
-                var file = _fileImportModel.Files[i];
-                _currentFile = i + 1;
+                _importResult.Add(await fileTask);
+
+                _currentFile++;
                 _fileProgress = (int)((double)_currentFile / _fileImportModel.Files.Count * 100);
                 StateHasChanged();
-
-                var talisman = await ProcessFile(file);
-                _importResult.Add(talisman);
             }
 
             _overwriteExistingCollection = _fileImportModel.OverwriteExistingCollection;
@@ -228,7 +231,7 @@
         }
     }
 
-    private void ImportFromWikiDb()
+    private async Task ImportFromWikiDb()
     {
         _importProgresssStepCompleted = false;
         _reviewDataStepCompleted = false;
@@ -237,6 +240,7 @@
         _isImporting = true;
         _fileProgressIndeterminate = true;
         _currentFile = null;
+        await AppInsights.StartTrackEvent("ImportResult");
         _importResultModalRef.Show();
 
         try
@@ -258,12 +262,12 @@
 
     private async void ExportToWikiDb()
     {
-        if (!await _localStorage.ContainKeyAsync(TalismanDataKey))
+        if (!await LocalStorage.ContainKeyAsync(TalismanDataKey))
         {
             return;
         }
 
-        var talismanData = JsonSerializer.Deserialize<List<Talisman>>(await _localStorage.GetItemAsStringAsync(TalismanDataKey));
+        var talismanData = JsonSerializer.Deserialize<List<Talisman>>(await LocalStorage.GetItemAsStringAsync(TalismanDataKey));
 
         _mhRiseWikiDbExportString = MhRiseWikiDbSerializer.Serialize(talismanData);
         StateHasChanged();
@@ -271,7 +275,7 @@
 
     private async Task<TalismanDto> ProcessFile(IFileEntry file)
     {
-        var response = await _http.PostAsync("/imagerecognition", new StreamContent(file.OpenReadStream()));
+        var response = await Http.PostAsync("/imagerecognition", new StreamContent(file.OpenReadStream()));
 
         response.EnsureSuccessStatusCode();
 
@@ -284,10 +288,12 @@
         _fileImportUploadValidationRef.Validate();
     }
 
-    private static void CancelClosing(ModalClosingEventArgs e)
+    private void CancelClosing(ModalClosingEventArgs e)
     {
         if (e.CloseReason != CloseReason.UserClosing)
             e.Cancel = true;
+
+        AppInsights.StopTrackEvent("ImportResult");
     }
 
     private void OnSelectedTabChanged(string name)
@@ -297,21 +303,21 @@
 
     private async Task AcceptImportResult()
     {
-        if (_overwriteExistingCollection || !await _localStorage.ContainKeyAsync(TalismanDataKey))
+        if (_overwriteExistingCollection || !await LocalStorage.ContainKeyAsync(TalismanDataKey))
         {
-            await _localStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(_importResult.Where(t => t.Operation == TalismanOperation.Add)
+            await LocalStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(_importResult.Where(t => t.Operation == TalismanOperation.Add)
                                                                                                     .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t)))));
         }
         else
         {
-            var existingData = JsonSerializer.Deserialize<List<Talisman>>(await _localStorage.GetItemAsStringAsync(TalismanDataKey)) ?? new List<Talisman>();
+            var existingData = JsonSerializer.Deserialize<List<Talisman>>(await LocalStorage.GetItemAsStringAsync(TalismanDataKey)) ?? new List<Talisman>();
             existingData.AddRange(_importResult.Where(t => t.Operation == TalismanOperation.Add)
                                                .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t))));
             _importResult.Where(t => t.Operation == TalismanOperation.Remove)
                          .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t)))
                          .Select(tr => { return existingData.FirstOrDefault(te => JsonSerializer.Serialize(te) == JsonSerializer.Serialize(tr)); })
                          .ForEach(te => existingData.Remove(te));
-            await _localStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(existingData));
+            await LocalStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(existingData));
         }
 
         _importResultModalRef.Hide();

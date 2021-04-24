@@ -26,7 +26,7 @@ namespace MHRTalismanManager.Server
             services.AddRazorPages();
             services.Configure<KestrelServerOptions>(options => { options.AllowSynchronousIO = true; });
             services.Configure<IISServerOptions>(options => { options.AllowSynchronousIO = true; });
-            services.AddSingleton(provider =>
+            services.AddTransient(provider =>
                                   {
                                       var env = provider.GetService<IWebHostEnvironment>();
 
@@ -35,7 +35,7 @@ namespace MHRTalismanManager.Server
                                                                  "eng",
                                                                  EngineMode.Default);
                                   });
-            services.AddSingleton<DataExtractionService>();
+            services.AddTransient<DataExtractionService>();
             services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_CONNECTIONSTRING"]);
         }
 
