@@ -1,8 +1,5 @@
 ﻿@page "/import"
-@using MoreLinq
 @using MHRTalismanManager.Shared
-@using System.ComponentModel.DataAnnotations
-@using System.Text.Json
 @inject ILocalStorageService LocalStorage
 @inject HttpClient Http
 
@@ -13,19 +10,7 @@
     </Items>
     <Content>
         <TabPanel Name="@DefaultTab">
-            <Validations @ref="_fileImportValidationRef" Mode="ValidationMode.Manual" Model="@_fileImportModel" ValidateOnLoad="false">
-                <ValidationSummary/>
-                <Validation @ref="_fileImportUploadValidationRef" Validator="@ValidateFileImport">
-                    <Field>
-                        <FieldLabel>Screenshots (max 500KB per file, jpeg only)</FieldLabel>
-                        <FileEdit Multiple="true" Filter="Image/jpeg" Changed="@InputFilesChanged" AutoReset="false"></FileEdit>
-                    </Field>
-                </Validation>
-                <Field>
-                    <Check TValue="bool" @bind-Checked="@_fileImportModel.OverwriteExistingCollection">Overwrite existing collection</Check>
-                </Field>
-                <Button Type="ButtonType.Submit" Color="Color.Primary" Clicked="@ImportFiles" Disabled="@_isImporting">Import</Button>
-            </Validations>
+            <FileImport @bind-Disabled="@_isImporting"></FileImport>
         </TabPanel>
         <TabPanel Name="mhriseWikiDb">
             <Tabs Pills="true" TabPosition="TabPosition.Left" SelectedTab="@_selectedMhriseWikiDbTab" SelectedTabChanged="name => _selectedMhriseWikiDbTab = name">
@@ -35,28 +20,10 @@
                 </Items>
                 <Content>
                     <TabPanel Name="@DefaultMhriseWikiDbTab">
-                        <Validations Mode="ValidationMode.Auto" Model="@_mhRiseWikiDbImportModel" ValidateOnLoad="false">
-                            <ValidationSummary/>
-                            <Validation>
-                                <Field>
-                                    <FieldLabel>Data</FieldLabel>
-                                    <MemoEdit Rows="10" @bind-Text="_mhRiseWikiDbImportModel.Data"></MemoEdit>
-                                </Field>
-                            </Validation>
-                            <Field>
-                                <Check TValue="bool" @bind-Checked="@_mhRiseWikiDbImportModel.OverwriteExistingCollection">Overwrite existing collection</Check>
-                            </Field>
-                            <Button Type="ButtonType.Submit" Color="Color.Primary" Clicked="@ImportFromWikiDb" Disabled="@_isImporting">Import</Button>
-                        </Validations>
+                        <MhRiseWikiDbImport @bind-Disabled="@_isImporting"></MhRiseWikiDbImport>
                     </TabPanel>
                     <TabPanel Name="export">
-                        <Field>
-                            <Button Type="ButtonType.Button" Color="Color.Primary" Clicked="@ExportToWikiDb" Disabled="@_isImporting">Export</Button>
-                        </Field>
-                        <Field>
-                            <FieldLabel>Data</FieldLabel>
-                            <MemoEdit Rows="10" Text="@_mhRiseWikiDbExportString"></MemoEdit>
-                        </Field>
+                        <MhRiseWikiDbExport Disabled="@_isImporting"></MhRiseWikiDbExport>
                     </TabPanel>
                 </Content>
             </Tabs>
@@ -64,262 +31,16 @@
     </Content>
 </Tabs>
 
-<Modal @ref="_importResultModalRef" Closing="@CancelClosing">
-    <ModalContent Size="ModalSize.ExtraLarge" Centered="true">
-        <ModalHeader>
-            <ModalTitle>Import Result</ModalTitle>
-            <CloseButton></CloseButton>
-        </ModalHeader>
-        <ModalBody>
-            <Steps SelectedStep="@_activeImportStep" SelectedStepChanged="@(() => { })">
-                <Items>
-                    <Step Name="@ImportProgressStep" Completed="@_importProgresssStepCompleted">Extracting data</Step>
-                    <Step Name="@ReviewDataStep" Completed="@_reviewDataStepCompleted">Review data</Step>
-                    <Step Name="@ProcessingProgressStep" Completed="@_processingProgressStepCompleted">Evaluate talismans</Step>
-                </Items>
-                <Content>
-                    <StepPanel Name="@ImportProgressStep">
-                        <Progress>
-                            <ProgressBar Value="@_fileProgress" Striped="@_fileProgressIndeterminate" Animated="@_fileProgressIndeterminate"></ProgressBar>
-                        </Progress>
-                    </StepPanel>
-                    <StepPanel Name="@ReviewDataStep">
-                        <Fields>
-                            <DataGrid TItem="TalismanDto" Data="@_importResult" ShowPager="true" ShowPageSizes="true" CommandMode="DataGridCommandMode.Default" EditMode="DataGridEditMode.Inline" Editable="true" Sortable="true" SortMode="DataGridSortMode.Multiple" Resizable="true" ResizeMode="DataGridResizeMode.Header">
-                                <DataGridColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill1)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 1" Sortable="true" Editable="false"/>
-                                <DataGridNumericColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill1)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true" Editable="false"/>
-                                <DataGridColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill2)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 2" Sortable="true" Editable="false"/>
-                                <DataGridNumericColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill2)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true" Editable="false"/>
-                                <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot1)" Caption="Slot 1" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
-                                <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot2)" Caption="Slot 2" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
-                                <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot3)" Caption="Slot 3" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
-                                <DataGridSelectColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Operation)" Caption="Operation" Sortable="true" Editable="true">
-                                    <EditTemplate>
-                                        <Select TValue="TalismanOperation" SelectedValue="@((TalismanOperation)context.CellValue)" SelectedValueChanged="@(( TalismanOperation v ) => context.CellValue = v)">
-                                            @foreach(var value in Enum.GetValues<TalismanOperation>()) {
-                                                <SelectItem TValue="TalismanOperation" Value="@value">@value.GetDisplayName()</SelectItem>
-                                            }
-                                        </Select>
-                                    </EditTemplate>
-                                </DataGridSelectColumn>
-                                <DataGridCommandColumn TItem="TalismanDto" NewCommandAllowed="false" DeleteCommandAllowed="false">
-                                    <EditCommandTemplate>
-                                        <Button Color="Color.Primary" Clicked="@context.Clicked">@context.LocalizationString</Button>
-                                    </EditCommandTemplate>
-                                    <SaveCommandTemplate>
-                                        <Button Color="Color.Primary" Clicked="@context.Clicked">@context.LocalizationString</Button>
-                                    </SaveCommandTemplate>
-                                    <CancelCommandTemplate>
-                                        <Button Color="Color.Secondary" Clicked="@context.Clicked">@context.LocalizationString</Button>
-                                    </CancelCommandTemplate>
-                                </DataGridCommandColumn>
-                            </DataGrid>
-                            <Field>
-                                <Button Type="ButtonType.Button" Color="Color.Primary" Block="true" Clicked="@AcceptImportResult">Continue</Button>
-                            </Field>
-                        </Fields>
-                    </StepPanel>
-                    <StepPanel Name="@ProcessingProgressStep"></StepPanel>
-                </Content>
-            </Steps>
-        </ModalBody>
-    </ModalContent>
-</Modal>
-
 @code {
     private const string DefaultTab = "files";
     private const string DefaultMhriseWikiDbTab = "import";
-    private const string ImportProgressStep = "importProgress";
-    private const string ReviewDataStep = "reviewData";
-    private const string ProcessingProgressStep = "processingProgress";
-    private const string TalismanDataKey = "talismans";
-    private string _mhRiseWikiDbExportString = string.Empty;
-    private bool _fileProgressIndeterminate;
     private string _selectedTab = DefaultTab;
     private string _selectedMhriseWikiDbTab = DefaultMhriseWikiDbTab;
-    private Modal _importResultModalRef;
-    private Validations _fileImportValidationRef;
-    private Validation _fileImportUploadValidationRef;
-    private readonly FileImportModel _fileImportModel = new();
-    private readonly MhRiseWikiDbImportModel _mhRiseWikiDbImportModel = new();
-    private int? _currentFile;
-    private int _fileProgress;
-    private bool _overwriteExistingCollection;
     private bool _isImporting;
-    private string _activeImportStep = ImportProgressStep;
-    private bool _importProgresssStepCompleted;
-    private bool _reviewDataStepCompleted;
-    private bool _processingProgressStepCompleted;
-    private readonly List<TalismanDto> _importResult = new();
-    private readonly IFormatProvider _slotEnumFormatProvider = new SlotEnumFormatProvider();
-    [Inject] private IApplicationInsights AppInsights { get; set; }
-
-    public class FileImportModel
-    {
-        public IReadOnlyList<IFileEntry> Files { get; set; } = new List<IFileEntry>();
-
-        public bool OverwriteExistingCollection { get; set; } = false;
-    }
-
-    public class MhRiseWikiDbImportModel
-    {
-        [Required]
-        public string Data { get; set; }
-
-        public bool OverwriteExistingCollection { get; set; } = false;
-    }
-
-    private void ValidateFileImport(ValidatorEventArgs e)
-    {
-        if (_fileImportModel.Files.Count == 0)
-        {
-            e.ErrorText = "No files selected";
-            e.Status = ValidationStatus.Error;
-        }
-        else if (_fileImportModel.Files.Any(f => f.Size > 500000))
-        {
-            e.ErrorText = "Files should not be bigger than 500KB";
-            e.Status = ValidationStatus.Error;
-        }
-        else
-        {
-            e.ErrorText = null;
-            e.Status = ValidationStatus.Success;
-        }
-    }
-
-    private async void ImportFiles()
-    {
-        if (!_fileImportValidationRef.ValidateAll())
-        {
-            return;
-        }
-
-        await AppInsights.TrackEvent("ImageImport");
-
-        _importProgresssStepCompleted = false;
-        _reviewDataStepCompleted = false;
-        _processingProgressStepCompleted = false;
-        _fileProgressIndeterminate = false;
-        _isImporting = true;
-        _activeImportStep = ImportProgressStep;
-        _importResult.Clear();
-        await AppInsights.StartTrackEvent("ImportResult");
-        _importResultModalRef.Show();
-        _currentFile = 0;
-
-        try
-        {
-            foreach (var fileTask in _fileImportModel.Files.Select(ProcessFile))
-            {
-                _importResult.Add(await fileTask);
-
-                _currentFile++;
-                _fileProgress = (int)((double)_currentFile / _fileImportModel.Files.Count * 100);
-                StateHasChanged();
-            }
-
-            _overwriteExistingCollection = _fileImportModel.OverwriteExistingCollection;
-            _activeImportStep = ReviewDataStep;
-            _importProgresssStepCompleted = true;
-        }
-        finally
-        {
-            _fileProgress = 0;
-            _isImporting = false;
-            StateHasChanged();
-        }
-    }
-
-    private async Task ImportFromWikiDb()
-    {
-        _importProgresssStepCompleted = false;
-        _reviewDataStepCompleted = false;
-        _processingProgressStepCompleted = false;
-        _importResult.Clear();
-        _isImporting = true;
-        _fileProgressIndeterminate = true;
-        _currentFile = null;
-        await AppInsights.StartTrackEvent("ImportResult");
-        _importResultModalRef.Show();
-
-        try
-        {
-            var talismans = MhRiseWikiDbSerializer.Deserialize(_mhRiseWikiDbImportModel.Data);
-
-            _importResult.AddRange(talismans);
-
-            _overwriteExistingCollection = _mhRiseWikiDbImportModel.OverwriteExistingCollection;
-            _activeImportStep = ReviewDataStep;
-            _importProgresssStepCompleted = true;
-        }
-        finally
-        {
-            _isImporting = false;
-            StateHasChanged();
-        }
-    }
-
-    private async void ExportToWikiDb()
-    {
-        if (!await LocalStorage.ContainKeyAsync(TalismanDataKey))
-        {
-            return;
-        }
-
-        var talismanData = JsonSerializer.Deserialize<List<Talisman>>(await LocalStorage.GetItemAsStringAsync(TalismanDataKey));
-
-        _mhRiseWikiDbExportString = MhRiseWikiDbSerializer.Serialize(talismanData);
-        StateHasChanged();
-    }
-
-    private async Task<TalismanDto> ProcessFile(IFileEntry file)
-    {
-        var response = await Http.PostAsync("/imagerecognition", new StreamContent(file.OpenReadStream()));
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<TalismanDto>();
-    }
-
-    private void InputFilesChanged(FileChangedEventArgs e)
-    {
-        _fileImportModel.Files = e.Files;
-        _fileImportUploadValidationRef.Validate();
-    }
-
-    private void CancelClosing(ModalClosingEventArgs e)
-    {
-        if (e.CloseReason != CloseReason.UserClosing)
-            e.Cancel = true;
-
-        AppInsights.StopTrackEvent("ImportResult");
-    }
-
+    
     private void OnSelectedTabChanged(string name)
     {
         _selectedTab = name;
     }
 
-    private async Task AcceptImportResult()
-    {
-        if (_overwriteExistingCollection || !await LocalStorage.ContainKeyAsync(TalismanDataKey))
-        {
-            await LocalStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(_importResult.Where(t => t.Operation == TalismanOperation.Add)
-                                                                                                    .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t)))));
-        }
-        else
-        {
-            var existingData = JsonSerializer.Deserialize<List<Talisman>>(await LocalStorage.GetItemAsStringAsync(TalismanDataKey)) ?? new List<Talisman>();
-            existingData.AddRange(_importResult.Where(t => t.Operation == TalismanOperation.Add)
-                                               .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t))));
-            _importResult.Where(t => t.Operation == TalismanOperation.Remove)
-                         .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t)))
-                         .Select(tr => { return existingData.FirstOrDefault(te => JsonSerializer.Serialize(te) == JsonSerializer.Serialize(tr)); })
-                         .ForEach(te => existingData.Remove(te));
-            await LocalStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(existingData));
-        }
-
-        _importResultModalRef.Hide();
-    }
 }

@@ -1,0 +1,144 @@
+﻿@using MoreLinq
+@using MHRTalismanManager.Shared
+@using System.Text.Json
+@inject ILocalStorageService LocalStorage
+
+<Modal @ref="_modalRef" Closing="@HandleClosing">
+    <ModalContent Size="ModalSize.ExtraLarge" Centered="true">
+        <ModalHeader>
+            <ModalTitle>Import Result</ModalTitle>
+            <CloseButton></CloseButton>
+        </ModalHeader>
+        <ModalBody>
+            <Steps SelectedStep="@_activeImportStep" SelectedStepChanged="@(() => { })">
+                <Items>
+                    <Step Name="@ImportProgressStep" Completed="@_importProgresssStepCompleted">Extracting data</Step>
+                    <Step Name="@ReviewDataStep" Completed="@_reviewDataStepCompleted">Review data</Step>
+                    <Step Name="@ProcessingProgressStep" Completed="@_processingProgressStepCompleted">Evaluate talismans</Step>
+                </Items>
+                <Content>
+                    <StepPanel Name="@ImportProgressStep">
+                        <Progress>
+                            <ProgressBar Value="@ImportProgressCurrent" Striped="@HasNoImportProgress" Animated="@HasNoImportProgress"></ProgressBar>
+                        </Progress>
+                    </StepPanel>
+                    <StepPanel Name="@ReviewDataStep">
+                        <Fields>
+                            <DataGrid TItem="TalismanDto" Data="@ImportData" ShowPager="true" ShowPageSizes="true" CommandMode="DataGridCommandMode.Default" EditMode="DataGridEditMode.Inline" Editable="true" Sortable="true" SortMode="DataGridSortMode.Multiple" Resizable="true" ResizeMode="DataGridResizeMode.Header">
+                                <DataGridColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill1)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 1" Sortable="true" Editable="false"/>
+                                <DataGridNumericColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill1)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true" Editable="false"/>
+                                <DataGridColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill2)}.{nameof(TalismanSkill.Name)}")" Caption="Skill 2" Sortable="true" Editable="false"/>
+                                <DataGridNumericColumn TItem="TalismanDto" Field="@($"{nameof(TalismanDto.Skill2)}.{nameof(TalismanSkill.Points)}")" Caption="Lvl" Sortable="true" Editable="false"/>
+                                <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot1)" Caption="Slot 1" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
+                                <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot2)" Caption="Slot 2" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
+                                <DataGridColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Slot3)" Caption="Slot 3" Sortable="true" DisplayFormat="{0:F}" DisplayFormatProvider="@_slotEnumFormatProvider" Editable="false"/>
+                                <DataGridSelectColumn TItem="TalismanDto" Field="@nameof(TalismanDto.Operation)" Caption="Operation" Sortable="true" Editable="true">
+                                    <EditTemplate>
+                                        <Select TValue="TalismanOperation" SelectedValue="@((TalismanOperation)context.CellValue)" SelectedValueChanged="@((TalismanOperation v) => context.CellValue = v)">
+                                            @foreach (var value in Enum.GetValues<TalismanOperation>())
+                                            {
+                                                <SelectItem TValue="TalismanOperation" Value="@value">@value.GetDisplayName()</SelectItem>
+                                            }
+                                        </Select>
+                                    </EditTemplate>
+                                </DataGridSelectColumn>
+                                <DataGridCommandColumn TItem="TalismanDto" NewCommandAllowed="false" DeleteCommandAllowed="false">
+                                    <EditCommandTemplate>
+                                        <Button Color="Color.Primary" Clicked="@context.Clicked">@context.LocalizationString</Button>
+                                    </EditCommandTemplate>
+                                    <SaveCommandTemplate>
+                                        <Button Color="Color.Primary" Clicked="@context.Clicked">@context.LocalizationString</Button>
+                                    </SaveCommandTemplate>
+                                    <CancelCommandTemplate>
+                                        <Button Color="Color.Secondary" Clicked="@context.Clicked">@context.LocalizationString</Button>
+                                    </CancelCommandTemplate>
+                                </DataGridCommandColumn>
+                            </DataGrid>
+                            <Field>
+                                <Button Type="ButtonType.Button" Color="Color.Primary" Block="true" Clicked="@AcceptImportResult">Continue</Button>
+                            </Field>
+                        </Fields>
+                    </StepPanel>
+                    <StepPanel Name="@ProcessingProgressStep"></StepPanel>
+                </Content>
+            </Steps>
+        </ModalBody>
+    </ModalContent>
+</Modal>
+
+@code {
+    private const string ImportProgressStep = "importProgress";
+    private const string ReviewDataStep = "reviewData";
+    private const string ProcessingProgressStep = "processingProgress";
+    private const string TalismanDataKey = "talismans";
+    private string _activeImportStep = ImportProgressStep;
+    private bool _importProgresssStepCompleted;
+    private bool _reviewDataStepCompleted;
+    private bool _processingProgressStepCompleted;
+    private Modal _modalRef;
+    private readonly IFormatProvider _slotEnumFormatProvider = new SlotEnumFormatProvider();
+
+    [Inject]
+    private IApplicationInsights AppInsights { get; set; }
+
+    [Parameter]
+    public int ImportProgressCurrent { get; set; }
+
+    [Parameter]
+    public bool CanProvideImportProgress { get; set; }
+
+    [Parameter]
+    public bool OverwriteExistingCollection { get; set; }
+
+    [Parameter]
+    public List<TalismanDto> ImportData { get; set; } = new();
+
+    [Parameter]
+    public Func<Task> ImportFunc { get; set; }
+
+    [Parameter]
+    public EventCallback Closed { get; set; }
+
+    private bool HasNoImportProgress => !CanProvideImportProgress;
+
+    public async Task Show(Func<Task> importFunc)
+    {
+        await AppInsights.StartTrackEvent("ImportResult");
+        _activeImportStep = ImportProgressStep;
+        _modalRef.Show();
+        await importFunc();
+        _activeImportStep = ReviewDataStep;
+    }
+
+    private async Task AcceptImportResult()
+    {
+        if (OverwriteExistingCollection || !await LocalStorage.ContainKeyAsync(TalismanDataKey))
+        {
+            await LocalStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(ImportData.Where(t => t.Operation == TalismanOperation.Add)
+                                                                                                .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t)))));
+        }
+        else
+        {
+            var existingData = JsonSerializer.Deserialize<List<Talisman>>(await LocalStorage.GetItemAsStringAsync(TalismanDataKey)) ?? new List<Talisman>();
+            existingData.AddRange(ImportData.Where(t => t.Operation == TalismanOperation.Add)
+                                            .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t))));
+            ImportData.Where(t => t.Operation == TalismanOperation.Remove)
+                      .Select(t => JsonSerializer.Deserialize<Talisman>(JsonSerializer.Serialize(t)))
+                      .Select(tr => { return existingData.FirstOrDefault(te => JsonSerializer.Serialize(te) == JsonSerializer.Serialize(tr)); })
+                      .ForEach(te => existingData.Remove(te));
+            await LocalStorage.SetItemAsync(TalismanDataKey, JsonSerializer.Serialize(existingData));
+        }
+
+        _modalRef.Hide();
+    }
+
+    private void HandleClosing(ModalClosingEventArgs e)
+    {
+        if (e.CloseReason != CloseReason.UserClosing)
+            e.Cancel = true;
+
+        AppInsights.StopTrackEvent("ImportResult");
+        Closed.InvokeAsync();
+    }
+
+}

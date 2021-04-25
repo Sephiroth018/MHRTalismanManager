@@ -1,0 +1,75 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using MHRTalismanManager.Shared
+
+<Validations Mode="ValidationMode.Auto" Model="@_data" ValidateOnLoad="false">
+    <ValidationSummary />
+    <Validation>
+        <Field>
+            <FieldLabel>Data</FieldLabel>
+            <MemoEdit Rows="10" @bind-Text="_data.Data"></MemoEdit>
+        </Field>
+    </Validation>
+    <Field>
+        <Check TValue="bool" @bind-Checked="@_data.OverwriteExistingCollection">Overwrite existing collection</Check>
+    </Field>
+    <Button Type="ButtonType.Submit" Color="Color.Primary" Clicked="@StartImport" Disabled="@Disabled">Import</Button>
+</Validations>
+
+<ImportModal @ref="@_importModalRef" CanProvideImportProgress="false" OverwriteExistingCollection="@_data.OverwriteExistingCollection" Closed="@ImportModalClosed" ImportData="@_importResult"></ImportModal>
+
+@code {
+    private readonly DataModel _data = new();
+    private readonly List<TalismanDto> _importResult = new();
+    private ImportModal _importModalRef;
+    private bool _disabled;
+
+    [Inject]
+    private IApplicationInsights AppInsights { get; set; }
+
+    [Parameter]
+    public bool Disabled
+    {
+        get => _disabled;
+        set
+        {
+            if(_disabled == value)
+                return;
+            _disabled = value;
+            DisabledChanged.InvokeAsync(value);
+        }
+    }
+
+    [Parameter]
+    public EventCallback<bool> DisabledChanged { get; set; }
+
+    private async Task StartImport()
+    {
+        await _importModalRef.Show(ImportFromWikiDb);
+    }
+
+    private async Task ImportFromWikiDb()
+    {
+        await AppInsights.TrackEvent("MhRiseWikiDbImport");
+
+        Disabled = true;
+        _importResult.Clear();
+        StateHasChanged();
+
+        var talismans = MhRiseWikiDbSerializer.Deserialize(_data.Data);
+
+        _importResult.AddRange(talismans);
+    }
+
+    private void ImportModalClosed()
+    {
+        Disabled = false;
+    }
+
+    public class DataModel
+    {
+        [Required]
+        public string Data { get; set; }
+
+        public bool OverwriteExistingCollection { get; set; } = false;
+    }
+}

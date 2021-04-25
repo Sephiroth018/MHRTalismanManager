@@ -1,0 +1,121 @@
+﻿@using MHRTalismanManager.Shared
+@inject HttpClient Http
+
+<Validations @ref="_validationsRef" Mode="ValidationMode.Manual" Model="@_data" ValidateOnLoad="false">
+    <ValidationSummary />
+    <Validation @ref="_validationRef" Validator="@ValidateFileImport">
+        <Field>
+            <FieldLabel>Screenshots (max 500KB per file, jpeg only)</FieldLabel>
+            <FileEdit Multiple="true" Filter="Image/jpeg" Changed="@InputFilesChanged" AutoReset="false"></FileEdit>
+        </Field>
+    </Validation>
+    <Field>
+        <Check TValue="bool" @bind-Checked="@_data.OverwriteExistingCollection">Overwrite existing collection</Check>
+    </Field>
+    <Button Type="ButtonType.Submit" Color="Color.Primary" Clicked="@StartImport" Disabled="@Disabled">Import</Button>
+</Validations>
+
+<ImportModal @ref="@_importModalRef" CanProvideImportProgress="true" ImportProgressCurrent="@_fileProgress" OverwriteExistingCollection="@_data.OverwriteExistingCollection" Closed="@ImportModalClosed" ImportData="@_importResult"></ImportModal>
+
+@code {
+    private Validations _validationsRef;
+    private Validation _validationRef;
+    private readonly DataModel _data = new();
+    private readonly List<TalismanDto> _importResult = new();
+    private ImportModal _importModalRef;
+    private bool _disabled;
+    private int _fileProgress;
+
+    [Inject]
+    private IApplicationInsights AppInsights { get; set; }
+
+    [Parameter]
+    public bool Disabled
+    {
+        get => _disabled;
+        set
+        {
+            if (_disabled == value)
+                return;
+            _disabled = value;
+            DisabledChanged.InvokeAsync(value);
+        }
+    }
+
+    [Parameter]
+    public EventCallback<bool> DisabledChanged { get; set; }
+
+    private async Task StartImport()
+    {
+        if (!_validationsRef.ValidateAll())
+        {
+            return;
+        }
+
+        await _importModalRef.Show(ImportFiles);
+    }
+
+    private async Task ImportFiles()
+    {
+        await AppInsights.TrackEvent("ImageImport");
+
+        _fileProgress = 0;
+        Disabled = true;
+        _importResult.Clear();
+        StateHasChanged();
+
+        foreach (var (fileTask, fileNr) in _data.Files.Select((f, i) => (ProcessFile(f), i + 1)))
+        {
+            _importResult.Add(await fileTask);
+
+            _fileProgress = (int)((double)fileNr / _data.Files.Count * 100);
+            StateHasChanged();
+        }
+    }
+
+    private async Task<TalismanDto> ProcessFile(IFileEntry file)
+    {
+        var response = await Http.PostAsync("/imagerecognition", new StreamContent(file.OpenReadStream()));
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<TalismanDto>();
+    }
+
+    private void ImportModalClosed()
+    {
+        Disabled = false;
+    }
+
+    private void ValidateFileImport(ValidatorEventArgs e)
+    {
+        if (_data.Files.Count == 0)
+        {
+            e.ErrorText = "No files selected";
+            e.Status = ValidationStatus.Error;
+        }
+        else if (_data.Files.Any(f => f.Size > 500000))
+        {
+            e.ErrorText = "Files should not be bigger than 500KB";
+            e.Status = ValidationStatus.Error;
+        }
+        else
+        {
+            e.ErrorText = null;
+            e.Status = ValidationStatus.Success;
+        }
+    }
+
+    private void InputFilesChanged(FileChangedEventArgs e)
+    {
+        _data.Files = e.Files;
+        _validationRef.Validate();
+    }
+
+    public class DataModel
+    {
+        public IReadOnlyList<IFileEntry> Files { get; set; } = new List<IFileEntry>();
+
+        public bool OverwriteExistingCollection { get; set; } = false;
+    }
+}
